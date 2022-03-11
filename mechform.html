@@ -1,0 +1,100 @@
+<!--Validate the following inputs
+Username: (Must start with capital letter )
+Password:(must contain 1 uppercase letter,lowercase letter,@,specail characters)
+Submit button-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GITAM ADMISSION</title>
+    <!--jquery-->
+	<script type="text/javascript" src="../../jquery/jquery-3.6.0.min.js"></script>
+	<!--bootstrap css-->
+	<link rel="stylesheet" type="text/css" href="../../bootstrap 3.3/css/bootstrap.css">
+	<!--bootstrap js-->
+	<script type="text/javascript" src="../../bootstrap 3.3/js/bootstrap.min.js"></script>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/css1.css">
+    <style>
+        body {
+          background-image: url('images/b6_buddies.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">GITAM VALIDATION FORM</a>
+          </div>
+          <div class="navbar-collapse collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="cseform.html">CSE</a></li>
+                  <li><a href="eceform.html">ECE</a></li>
+                  <li><a href="eeeform.html">EEE</a></li>
+                  <li><a href="mechform.html">MECH</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+          </div>
+        </div>
+  </nav>
+  
+  <h2>Validation form for MECH Students</h2>
+    <form name="myform" method="post" ...onsubmit="return validateUsername(),validatepassword()" ><br>
+        <label>Username :</label>
+        <input type="text" name= "Username" required pattern="[A-Z][a-z]* [A-Z][a-z]*" title="It should be in format Tom Cruise "><br><br>
+        <label>Email :</label>
+        <input type="email" title="It should be in format xyz.a@mail.com or xyz@mail.com" placeholder="example@gmail.com"><br><br>
+        <label>Password :</label>
+        <input type="password" name="password" required pattern="[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}" title="Must contain atleast one number,uppercase letter with the min. length 8"><br><br>
+        <label>Date Of Birth:</label>
+        <input type="date" name="Date Of Birth"><br><br>
+        <label>Address:</label>
+        <input type="text" name="Address" placeholder="Door/Lane No."><br><br>
+        &emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="Street lane" minlength="1"><br><br>
+        &emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="City" minlength="1"><br><br>
+        &emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="State" minlength="1"><br><br>
+        &emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="Country" minlength="1"><br><br>
+        <label>Pincode:</label>
+        <input type="number" required pattern="[1-9]{3}-[0-9]{3}" minlength="1" maxlength="6"><br><br>
+        <label for="number">Phone no.:</label>
+        <input list="numbers" id="number">
+        <datalist id="numbers">
+            <option value="India - +91">
+            <option value="Afghanistan - +93">
+            <option value="Australia - +61">  
+            <option value="BAngladesh - +880">    
+            <option value="Bhutan - +975">
+            <option value="Brazil - +55">  
+        </datalist>
+        <input id="phone" placeholder="888-888-8888" title="XXX-XXX-XXXX" minlength="12" maxlength="12"required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+        <label>Institution Name:</label>
+        <input type="text" name="Institution Name" placeholder="Institution Name" required pattern="[a-zA-Z]*" minlength="1"><br><br>
+        <label for="branch">Branch:</label>
+        <input list="branches" id="branch"><br><br>
+        <datalist id="branches">
+            <option value="CSE">
+            <option value="ECE">
+            <option value="EEE">
+            <option value="MECH">
+            <option value="CIVIL">
+            <option value="BIOTECH">
+        </datalist>
+
+        <input type="submit" value="Submit" onclick="validateUsername(),validatepassword()">
+        
+    </form>
+</body>
+</html>
